@@ -1,0 +1,7 @@
+node_modules
+dist
+.cache
+
+src/app/ongsList/node_modules
+src/app/ongsList/dist
+src/app/ongsList/.cache

@@ -1,0 +1,10 @@
+node_modules/
+front/node_modules/
+back/node_modules
+
+front/dist
+front/.cache
+
+front/src/app/ongsList/node_modules
+front/src/app/ongsList/dist
+front/src/app/ongsList/.cache

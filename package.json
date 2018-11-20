@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install:projects": "lerna exec npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/DavideCarvalho/helpmy.ong#readme",
   "devDependencies": {
     "lerna": "^3.4.3"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

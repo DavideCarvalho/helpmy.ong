@@ -1,10 +1,12 @@
 node_modules/
-front/node_modules/
-back/node_modules
+packages/front/node_modules
+packages/back/node_modules
 
-front/dist
-front/.cache
+packages/front/dist
+packages/front/.cache
 
-front/src/app/ongsList/node_modules
-front/src/app/ongsList/dist
-front/src/app/ongsList/.cache
+packages/front/src/app/ongsList/node_modules
+packages/front/src/app/ongsList/dist
+packages/front/src/app/ongsList/.cache
+
+packages/back/dist

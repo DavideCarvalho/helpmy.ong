@@ -1,4 +1,4 @@
-import app from './src/configuration/app';
+import app from './configuration/app';
 
 const { PORT = 8080 } = process.env;
 

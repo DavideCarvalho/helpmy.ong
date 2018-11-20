@@ -1,20 +1,18 @@
 import { html, define } from 'hybrids';
-import { getOngs } from './services/ongs.service';
-import materializeCss from './materialize.min.css';
+import { getOngs } from './services/ongsService';
+import materializeStyle from './styles';
 
 const ongsProperty = ({
   get: (host, lastValue) => lastValue || [],
-  set: (host, newValue, lastValue) => newValue,
-  connect: async (host, key, invalidate) => {
+  set: (host, newValue) => newValue,
+  connect: async (host) => {
     host.ongs = await getOngs();
     return () => {};
   },
 });
 
 const ongsListRender = () => html`
-<style>
-  ${materializeCss}
-</style>
+${materializeStyle}
 <h1>Help My.ONG</h1>
 <ul class="collapsible">
   <li>

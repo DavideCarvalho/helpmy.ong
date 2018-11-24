@@ -1,6 +1,6 @@
 import { html, define } from 'hybrids';
-import { getOngs } from './services/ongsService';
-import materializeStyle from './styles';
+import { getOngs } from '../services/ongsService';
+import materializeStyle from '../styles';
 
 const ongsProperty = ({
   get: (host, lastValue) => lastValue || [],

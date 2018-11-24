@@ -1,4 +1,3 @@
-
 import './src';
 
 let element;
@@ -16,8 +15,10 @@ export function mount() {
   return Promise
     .resolve()
     .then(() => {
+      const { head } = document;
+      head.appendChild(styleElement);
       fatherElement = document.getElementById('app');
-      element = document.createElement('app-caixa');
+      element = document.createElement('app-entrada');
       fatherElement.appendChild(element);
     });
 }

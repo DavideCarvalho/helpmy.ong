@@ -1,5 +1,5 @@
 import { html, define } from 'hybrids';
-import materializeCss from './materialize.min.css';
+import materializeCss from '../materialize.min.css';
 
 const ongDetail = {
   render: () => html`

@@ -15,12 +15,10 @@ const ongsListRender = ({ ongs }) => html`
   ${materializeStyle}
   <h1>Help My.ONG</h1>
   <ul class="collapsible">
-    ${ongs.map(ong => html`
-      <li>
-        <div class="collapsible-header">First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-    `)}
+    <li>
+      <div class="collapsible-header">First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
   </ul>
 `;
 

@@ -2,10 +2,14 @@
     "extends": "airbnb-base",
     "parser": "babel-eslint",
     "rules": {
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "no-param-reassign": [2, { 
+            "props": false
+        }]
     },
     "env": {
-        "browser": true
+        "browser": true,
+        "jest": true
     },
     "globals": {
         "document": true,

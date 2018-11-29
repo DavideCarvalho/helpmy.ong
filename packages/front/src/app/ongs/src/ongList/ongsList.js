@@ -1,4 +1,4 @@
-import { html, define } from 'hybrids';
+import { html } from 'hybrids';
 import { getOngs } from '../services/ongsService';
 import materializeStyle from '../styles';
 
@@ -28,4 +28,4 @@ const ongsList = {
   render: ongsListRender,
 };
 
-define('x-ongs-list', ongsList);
+export default ongsList;

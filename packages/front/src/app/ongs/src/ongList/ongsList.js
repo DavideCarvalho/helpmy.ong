@@ -14,12 +14,12 @@ const ongsProperty = ({
 const ongsListRender = ({ ongs }) => html`
   ${materializeStyle}
   <h1>Help My.ONG</h1>
-  <ul class="collapsible">
+  ${ongs.map(ong => html`
     <li>
-      <div class="collapsible-header">First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header">${ong.name}</div>
+      <div class="collapsible-body"><span>${ong.taskTitle}</span></div>
     </li>
-  </ul>
+  `)}
 `;
 
 

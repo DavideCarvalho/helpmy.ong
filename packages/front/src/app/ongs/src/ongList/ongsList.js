@@ -2,29 +2,29 @@ import { html } from 'hybrids';
 import { getOngs } from '../services/ongsService';
 import materializeStyle from '../styles';
 
-const ongsProperty = ({
-  get: (host, lastValue) => lastValue || [],
-  set: (host, newValue) => newValue,
-  connect: async (host) => {
-    host.ongs = await getOngs();
-    return () => {};
-  },
-});
+const resolveOngsPromise = ongsPromise => html.resolve(
+  ongsPromise.then(ongs => html`
+    ${ongs.map(ong => html`
+      <li>
+        <div class="collapsible-header">${ong.name} - ${ong.taskTitle}</div>
+        <div class="collapsible-body"><span>Lorem ipsum</span></div>
+      </li>
+    `)}
+  `),
+);
+
 
 const ongsListRender = ({ ongs }) => html`
   ${materializeStyle}
   <h1>Help My.ONG</h1>
-  ${ongs.map(ong => html`
-    <li>
-      <div class="collapsible-header">${ong.name}</div>
-      <div class="collapsible-body"><span>${ong.taskTitle}</span></div>
-    </li>
-  `)}
+  <ul class="collapsible">
+    ${resolveOngsPromise(ongs)}
+  </ul>
 `;
 
 
 const ongsList = {
-  ongs: ongsProperty,
+  ongs: () => getOngs(),
   render: ongsListRender,
 };
 

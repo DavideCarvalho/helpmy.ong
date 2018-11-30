@@ -1,6 +1,6 @@
-/* eslint-disable import/prefer-default-export */
+const url = process.env.API_URL;
+
 export const getOngs = async () => {
-  const data = await fetch('https://jsonplaceholder.typicode.com/todos');
-  const jsonData = await data.json();
-  return jsonData;
+  const data = await fetch(`${url}/ongs`);
+  return data.json();
 };

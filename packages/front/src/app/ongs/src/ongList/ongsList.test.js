@@ -19,7 +19,7 @@ describe('<x-ongs-list>', () => {
       const titleValue = titleEl.innerText;
       expect(titleValue).to.equal('Help My.ONG');
       done();
-    }, 200);
+    }, 10);
   });
 
   it('should render ong title and ong task on first <li>', (done) => {
@@ -39,13 +39,11 @@ describe('<x-ongs-list>', () => {
     const el = document.createElement('x-ongs-list');
     document.body.appendChild(el);
     setTimeout(() => {
-      const liEls = el.shadowRoot.querySelectorAll('li div');
-      const ongName = liEls[0].innerText;
-      const taskName = liEls[1].innerText;
-      expect(ongName).to.equal('Ong name');
-      expect(taskName).to.equal('Hello World');
+      const liEls = el.shadowRoot.querySelector('ul li div');
+      const ongNameWithTaskTitle = liEls.innerText;
+      expect(ongNameWithTaskTitle).to.equal('Ong name - Hello World');
       done();
-    }, 500);
+    }, 10);
   });
 
   afterEach(() => {

@@ -5,10 +5,18 @@ import ongDetailRoute from './ong-detail-route';
 
 const router = new Navigo();
 
+const cleanUpBody = () => {
+  const appDiv = document.body.querySelector('#app');
+  while (appDiv.firstChild) {
+    appDiv.removeChild(appDiv.firstChild);
+  }
+}
+
+
 router
-  .on('/', ongsRoute)
-  .on('/ongs', ongsRoute)
-  .on('/ongs/:id', ongDetailRoute)
+  .on('/', ongsRoute, { leave: cleanUpBody })
+  .on('/ongs', ongsRoute, { leave: cleanUpBody })
+  .on('/ongs/:id', ongDetailRoute, { leave: cleanUpBody })
   .notFound(() => {
     console.log('não achei');
   })

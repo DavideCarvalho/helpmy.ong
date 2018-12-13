@@ -1,5 +1,4 @@
 import Navigo from 'navigo';
-import M from 'materialize-css';
 import ongsRoute from './ongs-route';
 import ongDetailRoute from './ong-detail-route';
 
@@ -10,7 +9,7 @@ const cleanUpBody = () => {
   while (appDiv.firstChild) {
     appDiv.removeChild(appDiv.firstChild);
   }
-}
+};
 
 
 router
